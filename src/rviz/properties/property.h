@@ -62,12 +62,12 @@ class PropertyTreeModel;
  *       color_property_ = new ColorProperty( "Color", Qt::white,
  *                                            "Color to draw the range.",
  *                                            this, SLOT( updateColorAndAlpha() ));
- *     
+ *
  *       alpha_property_ = new FloatProperty( "Alpha", 0.5,
  *                                            "Amount of transparency to apply to the range.",
  *                                            this, SLOT( updateColorAndAlpha() ));
  *     }
- *     
+ *
  *     void RangeDisplay::updateColorAndAlpha()
  *     {
  *       Ogre::ColourValue oc = color_property_->getOgreColor();
@@ -274,7 +274,7 @@ public:
    *
    * If this function returns false, a QStyledItemDelegate will do the painting. */
   virtual bool paint( QPainter* painter,
-                      const QStyleOptionViewItem& option ) const { return false; }
+                      const QStyleOptionViewItem& option ) const;
 
 
   /** @brief Create an editor widget to edit the value of this property.

@@ -60,7 +60,6 @@ namespace rviz
 MapDisplay::MapDisplay()
   : Display()
   , manual_object_( NULL )
-  , material_( 0 )
   , loaded_( false )
   , resolution_( 0.0f )
   , width_( 0 )
@@ -95,7 +94,7 @@ MapDisplay::MapDisplay()
   width_property_ = new IntProperty( "Width", 0,
                                      "Width of the map, in meters. (not editable)", this );
   width_property_->setReadOnly( true );
-  
+
   height_property_ = new IntProperty( "Height", 0,
                                       "Height of the map, in meters. (not editable)", this );
   height_property_->setReadOnly( true );

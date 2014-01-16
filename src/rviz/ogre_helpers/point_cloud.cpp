@@ -144,12 +144,12 @@ PointCloud::PointCloud()
   tile_material_ = Ogre::MaterialManager::getSingleton().getByName("rviz/PointCloudTile");
   box_material_ = Ogre::MaterialManager::getSingleton().getByName("rviz/PointCloudBox");
 
-  point_material_ = Ogre::MaterialPtr(point_material_)->clone(ss.str() + "Point");
-  square_material_ = Ogre::MaterialPtr(square_material_)->clone(ss.str() + "Square");
-  flat_square_material_ = Ogre::MaterialPtr(flat_square_material_)->clone(ss.str() + "FlatSquare");
-  sphere_material_ = Ogre::MaterialPtr(sphere_material_)->clone(ss.str() + "Sphere");
-  tile_material_ = Ogre::MaterialPtr(tile_material_)->clone(ss.str() + "Tiles");
-  box_material_ = Ogre::MaterialPtr(box_material_)->clone(ss.str() + "Box");
+  point_material_ = point_material_->clone(ss.str() + "Point");
+  square_material_ = square_material_->clone(ss.str() + "Square");
+  flat_square_material_ = flat_square_material_->clone(ss.str() + "FlatSquare");
+  sphere_material_ = sphere_material_->clone(ss.str() + "Sphere");
+  tile_material_ = tile_material_->clone(ss.str() + "Tiles");
+  box_material_ = box_material_->clone(ss.str() + "Box");
 
   point_material_->load();
   square_material_->load();
@@ -176,12 +176,12 @@ PointCloud::~PointCloud()
   tile_material_->unload();
   box_material_->unload();
 
-  Ogre::MaterialManager::getSingleton().remove(point_material_);
-  Ogre::MaterialManager::getSingleton().remove(square_material_);
-  Ogre::MaterialManager::getSingleton().remove(flat_square_material_);
-  Ogre::MaterialManager::getSingleton().remove(sphere_material_);
-  Ogre::MaterialManager::getSingleton().remove(tile_material_);
-  Ogre::MaterialManager::getSingleton().remove(box_material_);
+  Ogre::MaterialManager::getSingleton().remove(point_material_->getName());
+  Ogre::MaterialManager::getSingleton().remove(square_material_->getName());
+  Ogre::MaterialManager::getSingleton().remove(flat_square_material_->getName());
+  Ogre::MaterialManager::getSingleton().remove(sphere_material_->getName());
+  Ogre::MaterialManager::getSingleton().remove(tile_material_->getName());
+  Ogre::MaterialManager::getSingleton().remove(box_material_->getName());
 }
 
 const Ogre::AxisAlignedBox& PointCloud::getBoundingBox() const

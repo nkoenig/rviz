@@ -230,5 +230,20 @@ void ViewController::updateNearClipDistance()
   camera_->setNearClipDistance( n );
 }
 
+void ViewController::update(float /*dt*/, float /*ros_dt*/)
+{
+}
+
+void ViewController::handleMouseEvent(ViewportMouseEvent& /*evt*/)
+{
+}
+
+void ViewController::lookAt( const Ogre::Vector3& /*point*/ )
+{
+}
+
+void ViewController::mimic( ViewController* /*source_view*/ )
+{
+}
 
 } // end namespace rviz

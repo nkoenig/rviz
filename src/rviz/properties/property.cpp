@@ -548,4 +548,11 @@ void Property::collapse()
   }
 }
 
+bool Property::paint( QPainter* /*painter*/,
+    const QStyleOptionViewItem& /*option*/ ) const
+{
+  return false;
+}
+
+
 } // end namespace rviz

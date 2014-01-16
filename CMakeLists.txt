@@ -15,6 +15,7 @@ find_package(Eigen REQUIRED)
 find_package(PkgConfig REQUIRED)
 
 pkg_check_modules(OGRE OGRE)
+pkg_check_modules(OGRE-OVERLAY OGRE-Overlay)
 ## Find OGRE Plugin path (not necessarily platform-independent, I guess)
 execute_process(COMMAND
 pkg-config --variable=plugindir OGRE
@@ -76,6 +77,7 @@ catkin_package(
     rviz
     default_plugin
     ${OGRE_LIBRARIES}
+    ${OGRE-OVERLAY_LIBRARIES}
     ${rviz_ADDITIONAL_LIBRARIES}
     ${OPENGL_LIBRARIES}
     ${urdfdom_LIBRARIES}

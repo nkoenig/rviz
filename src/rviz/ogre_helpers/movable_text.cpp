@@ -47,7 +47,12 @@
 #include "OGRE/OgreSceneNode.h"
 #include "OGRE/OgreMaterialManager.h"
 #include "OGRE/OgreHardwareBufferManager.h"
+
+#if (OGRE_VERSION < ((1 << 16) | (9 << 8) | 0))
 #include "OGRE/OgreFontManager.h"
+#else
+#include "OGRE/Overlay/OgreFontManager.h"
+#endif
 
 #include <sstream>
 

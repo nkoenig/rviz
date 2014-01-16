@@ -186,6 +186,7 @@ target_link_libraries(${PROJECT_NAME}
   ${Boost_LIBRARIES}
   ${catkin_LIBRARIES}
   ${OGRE_LIBRARIES}
+  ${OGRE-OVERLAY_LIBRARIES}
   ${OPENGL_LIBRARIES}
   ${QT_LIBRARIES}
   ${urdfdom_LIBRARIES}
@@ -231,7 +232,7 @@ endif(NEW_YAMLCPP_FOUND)
 ########### The rviz executable ###########
 add_executable(executable main.cpp)
 
-target_link_libraries(executable ${PROJECT_NAME} ${QT_LIBRARIES} ${OGRE_LIBRARIES})
+target_link_libraries(executable ${PROJECT_NAME} ${QT_LIBRARIES} ${OGRE_LIBRARIES} ${OGRE-OVERLAY_LIBRARIES})
 set_target_properties(executable
                       PROPERTIES OUTPUT_NAME ${PROJECT_NAME})
 
